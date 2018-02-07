@@ -8,6 +8,21 @@ pragma solidity ^0.4.17;
 * funds can be transfered. It's like an extra layer of security on top of traditional crowdfunding
 **/
 
+// factory is responsible for deploying the campaigns and
+// keeping track of all currently active (deployed) campaigns
+contract CrowdfundingFactory {
+    address[] private liveCampaigns;
+    
+    function createCampaign(uint minimum) public {
+        address campaign = new Crowdfunding(minimum, msg.sender);
+        liveCampaigns.push(campaign);
+    }
+    
+    function getLiveCampaigns() public view returns (address[]) {
+        return liveCampaigns;
+    }
+}
+
 contract Crowdfunding {
     modifier owner() {
         require(msg.sender == manager);
@@ -35,8 +50,8 @@ contract Crowdfunding {
     Request[] public requests;
     
     // contstructor function setting minimum amount to contribute
-    function Crowdfunding(uint minimum) public {
-        manager = msg.sender;
+    function Crowdfunding(uint minimum, address creator) public {
+        manager = creator;
         minimumContribution = minimum;
     }
     
