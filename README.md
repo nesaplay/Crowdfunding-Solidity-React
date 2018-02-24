@@ -9,7 +9,8 @@ Web3 and React used on the frontend.
 ## STACK
 
   - Solidity
-  - React
-  - Web3
+  - React.js
+  - Next.js
+  - Web3.js
   - Infura using Rinkby
   - Metamask
