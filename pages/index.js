@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { Card, Button } from 'semantic-ui-react'
+import { Link } from '../routes'
+
 import factory from '../ethereum/factory'
 import Layout from '../components/Layout'
 
-export default class Index extends Component {
+export default class IndexCampaign extends Component {
     static async getInitialProps() {
         const campaigns = await factory.methods.getLiveCampaigns().call()
 
@@ -15,7 +17,11 @@ export default class Index extends Component {
         const items = campaigns.map(address => {
             return {
                 header: address,
-                description: <a>View Campaign</a>,
+                description: (
+                    <Link route={`/campaigns/${address}`}>
+                        <a>View Campaign</a>
+                    </Link>
+                ),
                 meta: '85% done',
                 fluid: true
             }
@@ -28,15 +34,18 @@ export default class Index extends Component {
         return (
             <Layout>
                 <div>
-                    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
                     <h3>Live campaigns</h3>
-                    <Button 
-                        content='Create Campaign' 
-                        icon='add' 
-                        labelPosition='right'
-                        floated='right'
-                        primary
-                    />
+                    <Link route='/campaigns/new'>
+                        <a>
+                            <Button 
+                                content='Create Campaign' 
+                                icon='add' 
+                                labelPosition='right'
+                                floated='right'
+                                primary
+                            />
+                        </a>
+                    </Link>
                     {this.renderCampaigns()}
                 </div>
             </Layout>

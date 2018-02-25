@@ -38,6 +38,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _semanticUiReact = require('semantic-ui-react');
 
+var _routes = require('../routes');
+
 var _factory = require('../ethereum/factory');
 
 var _factory2 = _interopRequireDefault(_factory);
@@ -51,16 +53,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _jsxFileName = '/Users/iShone/Projects/crowdfunding-solidity-react/pages/index.js?entry';
 
 
-var Index = function (_Component) {
-    (0, _inherits3.default)(Index, _Component);
+var IndexCampaign = function (_Component) {
+    (0, _inherits3.default)(IndexCampaign, _Component);
 
-    function Index() {
-        (0, _classCallCheck3.default)(this, Index);
+    function IndexCampaign() {
+        (0, _classCallCheck3.default)(this, IndexCampaign);
 
-        return (0, _possibleConstructorReturn3.default)(this, (Index.__proto__ || (0, _getPrototypeOf2.default)(Index)).apply(this, arguments));
+        return (0, _possibleConstructorReturn3.default)(this, (IndexCampaign.__proto__ || (0, _getPrototypeOf2.default)(IndexCampaign)).apply(this, arguments));
     }
 
-    (0, _createClass3.default)(Index, [{
+    (0, _createClass3.default)(IndexCampaign, [{
         key: 'renderCampaigns',
         value: function renderCampaigns() {
             var campaigns = this.props.campaigns;
@@ -68,12 +70,16 @@ var Index = function (_Component) {
             var items = campaigns.map(function (address) {
                 return {
                     header: address,
-                    description: _react2.default.createElement('a', {
+                    description: _react2.default.createElement(_routes.Link, { route: '/campaigns/' + address, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 21
+                        }
+                    }, _react2.default.createElement('a', {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 18
+                            lineNumber: 22
                         }
-                    }, 'View Campaign'),
+                    }, 'View Campaign')),
                     meta: '85% done',
                     fluid: true
                 };
@@ -81,7 +87,7 @@ var Index = function (_Component) {
 
             return _react2.default.createElement(_semanticUiReact.Card.Group, { items: items, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 24
+                    lineNumber: 30
                 }
             });
         }
@@ -91,23 +97,28 @@ var Index = function (_Component) {
             return _react2.default.createElement(_Layout2.default, {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 29
+                    lineNumber: 35
                 }
             }, _react2.default.createElement('div', {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 30
+                    lineNumber: 36
                 }
-            }, _react2.default.createElement('link', { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css', __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 31
-                }
-            }), _react2.default.createElement('h3', {
+            }, _react2.default.createElement('h3', {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 32
+                    lineNumber: 37
                 }
-            }, 'Live campaigns'), _react2.default.createElement(_semanticUiReact.Button, {
+            }, 'Live campaigns'), _react2.default.createElement(_routes.Link, { route: '/campaigns/new', __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 38
+                }
+            }, _react2.default.createElement('a', {
+                __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 39
+                }
+            }, _react2.default.createElement(_semanticUiReact.Button, {
                 content: 'Create Campaign',
                 icon: 'add',
                 labelPosition: 'right',
@@ -115,9 +126,9 @@ var Index = function (_Component) {
                 primary: true,
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 33
+                    lineNumber: 40
                 }
-            }), this.renderCampaigns()));
+            }))), this.renderCampaigns()));
         }
     }], [{
         key: 'getInitialProps',
@@ -151,8 +162,8 @@ var Index = function (_Component) {
         }()
     }]);
 
-    return Index;
+    return IndexCampaign;
 }(_react.Component);
 
-exports.default = Index;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbIlJlYWN0IiwiQ29tcG9uZW50IiwiQ2FyZCIsIkJ1dHRvbiIsImZhY3RvcnkiLCJMYXlvdXQiLCJJbmRleCIsImNhbXBhaWducyIsInByb3BzIiwiaXRlbXMiLCJtYXAiLCJoZWFkZXIiLCJhZGRyZXNzIiwiZGVzY3JpcHRpb24iLCJtZXRhIiwiZmx1aWQiLCJyZW5kZXJDYW1wYWlnbnMiLCJtZXRob2RzIiwiZ2V0TGl2ZUNhbXBhaWducyIsImNhbGwiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxBQUFPLEFBQVM7Ozs7QUFDaEIsQUFBUyxBQUFNOztBQUNmLEFBQU8sQUFBYTs7OztBQUNwQixBQUFPLEFBQVk7Ozs7Ozs7OztJQUVFLEE7Ozs7Ozs7Ozs7OzBDQU9DO2dCQUFBLEFBQ04sWUFBYyxLQURSLEFBQ2EsTUFEYixBQUNOLEFBQ1I7O2dCQUFNLGtCQUFRLEFBQVUsSUFBSSxtQkFBVyxBQUNuQzs7NEJBQU8sQUFDSyxBQUNSO2lEQUFhLGNBQUE7O3NDQUFBO3dDQUFBO0FBQUE7QUFBQSxxQkFBQSxFQUZWLEFBRVUsQUFDYjswQkFIRyxBQUdHLEFBQ047MkJBSkosQUFBTyxBQUlJLEFBRWQ7QUFOVSxBQUNIO0FBRlIsQUFBYyxBQVNkLGFBVGM7O2lEQVNQLEFBQUMsc0JBQUQsQUFBTSxTQUFNLE9BQVosQUFBbUI7OEJBQW5CO2dDQUFQLEFBQU8sQUFDVjtBQURVO2FBQUE7Ozs7aUNBR0YsQUFDTDttQ0FDSSxBQUFDOzs4QkFBRDtnQ0FBQSxBQUNJO0FBREo7QUFBQSxhQUFBLGtCQUNJLGNBQUE7OzhCQUFBO2dDQUFBLEFBQ0k7QUFESjtBQUFBLHVEQUNVLEtBQU4sQUFBVSxjQUFhLE1BQXZCLEFBQTRCOzhCQUE1QjtnQ0FESixBQUNJLEFBQ0E7QUFEQTtnQ0FDQSxjQUFBOzs4QkFBQTtnQ0FBQTtBQUFBO0FBQUEsZUFGSixBQUVJLEFBQ0EsbUNBQUEsQUFBQzt5QkFBRCxBQUNZLEFBQ1I7c0JBRkosQUFFUyxBQUNMOytCQUhKLEFBR2tCLEFBQ2Q7eUJBSkosQUFJWSxBQUNSO3lCQUxKOzs4QkFBQTtnQ0FISixBQUdJLEFBT0M7QUFQRDtBQUNJLHFCQU5oQixBQUNJLEFBQ0ksQUFVSyxBQUFLLEFBSXJCOzs7Ozs7Ozs7Ozs7dUNBcEMyQixrQkFBQSxBQUFRLFFBQVIsQUFBZ0IsbUJBQWhCLEFBQW1DLEE7O2lDQUFyRDtBO2lFQUVDLEVBQUUsV0FBRixBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBSm9CLEE7O2tCQUFkLEEiLCJmaWxlIjoiaW5kZXguanM/ZW50cnkiLCJzb3VyY2VSb290IjoiL1VzZXJzL2lTaG9uZS9Qcm9qZWN0cy9jcm93ZGZ1bmRpbmctc29saWRpdHktcmVhY3QifQ==
+exports.default = IndexCampaign;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbIlJlYWN0IiwiQ29tcG9uZW50IiwiQ2FyZCIsIkJ1dHRvbiIsIkxpbmsiLCJmYWN0b3J5IiwiTGF5b3V0IiwiSW5kZXhDYW1wYWlnbiIsImNhbXBhaWducyIsInByb3BzIiwiaXRlbXMiLCJtYXAiLCJoZWFkZXIiLCJhZGRyZXNzIiwiZGVzY3JpcHRpb24iLCJtZXRhIiwiZmx1aWQiLCJyZW5kZXJDYW1wYWlnbnMiLCJtZXRob2RzIiwiZ2V0TGl2ZUNhbXBhaWducyIsImNhbGwiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxBQUFPLEFBQVM7Ozs7QUFDaEIsQUFBUyxBQUFNOztBQUNmLEFBQVMsQUFBWTs7QUFFckIsQUFBTyxBQUFhOzs7O0FBQ3BCLEFBQU8sQUFBWTs7Ozs7Ozs7O0lBRUUsQTs7Ozs7Ozs7Ozs7MENBT0M7Z0JBQUEsQUFDTixZQUFjLEtBRFIsQUFDYSxNQURiLEFBQ04sQUFDUjs7Z0JBQU0sa0JBQVEsQUFBVSxJQUFJLG1CQUFXLEFBQ25DOzs0QkFBTyxBQUNLLEFBQ1I7aURBQ0ksQUFBQyw4QkFBSyx1QkFBTixBQUEyQjtzQ0FBM0I7d0NBQUEsQUFDSTtBQURKO3FCQUFBLGtCQUNJLGNBQUE7O3NDQUFBO3dDQUFBO0FBQUE7QUFBQSx1QkFKTCxBQUdDLEFBQ0ksQUFHUjswQkFQRyxBQU9HLEFBQ047MkJBUkosQUFBTyxBQVFJLEFBRWQ7QUFWVSxBQUNIO0FBRlIsQUFBYyxBQWFkLGFBYmM7O2lEQWFQLEFBQUMsc0JBQUQsQUFBTSxTQUFNLE9BQVosQUFBbUI7OEJBQW5CO2dDQUFQLEFBQU8sQUFDVjtBQURVO2FBQUE7Ozs7aUNBR0YsQUFDTDttQ0FDSSxBQUFDOzs4QkFBRDtnQ0FBQSxBQUNJO0FBREo7QUFBQSxhQUFBLGtCQUNJLGNBQUE7OzhCQUFBO2dDQUFBLEFBQ0k7QUFESjtBQUFBLCtCQUNJLGNBQUE7OzhCQUFBO2dDQUFBO0FBQUE7QUFBQSxlQURKLEFBQ0ksQUFDQSxtQ0FBQSxBQUFDLDhCQUFLLE9BQU4sQUFBWTs4QkFBWjtnQ0FBQSxBQUNJO0FBREo7K0JBQ0ksY0FBQTs7OEJBQUE7Z0NBQUEsQUFDSTtBQURKO0FBQUEsK0JBQ0ksQUFBQzt5QkFBRCxBQUNZLEFBQ1I7c0JBRkosQUFFUyxBQUNMOytCQUhKLEFBR2tCLEFBQ2Q7eUJBSkosQUFJWSxBQUNSO3lCQUxKOzs4QkFBQTtnQ0FKWixBQUVJLEFBQ0ksQUFDSSxBQVNQO0FBVE87QUFDSSx1QkFQeEIsQUFDSSxBQUNJLEFBYUssQUFBSyxBQUlyQjs7Ozs7Ozs7Ozs7O3VDQTNDMkIsa0JBQUEsQUFBUSxRQUFSLEFBQWdCLG1CQUFoQixBQUFtQyxBOztpQ0FBckQ7QTtpRUFFQyxFQUFFLFdBQUYsQTs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUo0QixBOztrQkFBdEIsQSIsImZpbGUiOiJpbmRleC5qcz9lbnRyeSIsInNvdXJjZVJvb3QiOiIvVXNlcnMvaVNob25lL1Byb2plY3RzL2Nyb3dkZnVuZGluZy1zb2xpZGl0eS1yZWFjdCJ9
