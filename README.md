@@ -11,6 +11,6 @@ Web3 and React used on the frontend.
   - Solidity
   - React.js
   - Next.js
+  - Semantic-UI-react
   - Web3.js
   - Infura using Rinkby
-  - Metamask
