@@ -3,5 +3,5 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var FACTORY_ADDRESS = exports.FACTORY_ADDRESS = '0x7b7f55ebb400d7339f06e5f2da4df9d3598a37f3';
+var FACTORY_ADDRESS = exports.FACTORY_ADDRESS = '0x105A485520009F61A86B053d9a40659f977d0d79';
 //# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnN0YW50cy5qcyJdLCJuYW1lcyI6WyJGQUNUT1JZX0FERFJFU1MiXSwibWFwcGluZ3MiOiI7Ozs7O0FBQU8sSUFBTSw0Q0FBa0IsQUFBeEIiLCJmaWxlIjoiY29uc3RhbnRzLmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9pU2hvbmUvUHJvamVjdHMvY3Jvd2RmdW5kaW5nLXNvbGlkaXR5LXJlYWN0In0=

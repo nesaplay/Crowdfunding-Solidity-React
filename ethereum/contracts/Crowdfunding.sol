@@ -104,4 +104,23 @@ contract Crowdfunding {
         request.recipient.transfer(request.value);
         request.complete = true; 
     }
+
+    // Returns all info about the campaign, useful for displaying
+    // the data for frontend application
+    function getAllDetails() public view returns (
+        uint, uint, uint, uint, address
+    ) {
+        return (
+            minimumContribution,
+            this.balance,
+            requests.length,
+            approversCount,
+            manager
+        );
+    }
+
+    // Retrieves current number of requests
+    function getRequestCount() public view returns (uint) {
+        return requests.length;
+    }
 }
