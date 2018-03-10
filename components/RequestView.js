@@ -14,6 +14,15 @@ export default class RequestView extends Component {
         })
     }
 
+    onFinalize = async () => {
+        const campaign = await Campaign(this.props.address)
+        const accounts = await web3.eth.getAccounts()
+
+        await campaign.methods.finalizeRequest(this.props.id).send({
+            from: accounts[0]
+        })
+    }
+
     render() {
         const { Row, Cell } = Table
         const { id, request, approversCount } = this.props
@@ -29,7 +38,7 @@ export default class RequestView extends Component {
                     <Button color='green' basic onClick={this.onApprove}>Approve</Button>
                 </Cell>
                 <Cell>
-                    <Button color='blue' basic>Finalize</Button>
+                    <Button color='blue' basic onClick={this.onFinalize}>Finalize</Button>
                 </Cell>
             </Row>
         );
