@@ -1,10 +1,8 @@
 # Crowdfunding-Solidity-React
 
-[ WORK IN PROGRESS ... ]
-
-This Smart Contract will control how people contribute to a project, much like Kickstarter.
+This Decentralized Application will control how people contribute to a project, much like Kickstarter.
 The difference is that there is a voting system in place for how and where the Contract owner can spend the money.
-Web3 and React used on the frontend.
+ React used on the frontend to communicate with the Smart Contract.
 
 ## STACK
 
@@ -14,3 +12,13 @@ Web3 and React used on the frontend.
   - Semantic-UI-react
   - Web3.js
   - Infura using Rinkby
+
+
+To try it out:
+
+```
+yarn install
+yarn run dev  
+```
+
+(Make sure to have Metamask using Rinkby Testnet)

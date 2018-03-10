@@ -4,7 +4,7 @@ import { Link } from '../routes'
 
 export default () => (
     <header>
-        <Menu style={{ marginTop: '10px' }}>
+        <Menu style={{ margin: '10px 0px' }}>
             <Link route='/'>
                 <a className='item'>Smart Kickstarter</a>
             </Link>
